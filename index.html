@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Employee Directory</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style type="text/css">
+    .preloader-wrapper {
+      margin: 100px 450px;
+    }
+  </style>
+</head>
+<body onload="displayList()">
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Employee Directory</a>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+
+      <!-- Preloader -->
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-yellow">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-green">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <ul class="collection" hidden>
+        <li class="collection-item row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">search</i>
+              <input id="search" type="text" class="validate">
+              <label for="icon_prefix">Search</label>
+            </div>
+        </li>
+
+        <!-- Error Message -->
+        <li id="error" class="collection-item" hidden>
+          <center><h5>There is no data to display</h5><br><a class="waves-effect waves-light btn modal-trigger light-blue" href="#modal1">Add New</a></center>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Add Employee Modal -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <input id="name" type="text" placeholder="Name">
+      <input id="designation" type="text" placeholder="Designation">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat red-text">Cancel</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green-text" id="add">Add</a>
+    </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/custom.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('.modal-trigger').leanModal({
+        ready: function() { $('#name').focus(); },
+        complete: function() { $('#name, #designation').val(null); }
+      });
+    });
+  </script>
+
+  </body>
+</html>
